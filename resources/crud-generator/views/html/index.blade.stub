@@ -1,0 +1,68 @@
+@extends('admin.layouts.master')
+<style>
+    .searchBar{
+        margin-right:22px !important;
+    }
+</style>
+@section('content')
+    <div class="container-fluid">
+        <div class="row">
+                     <div class="col-md-12">
+                <div class="card">
+                 <div class="header" style="background: #e2d1d1">
+                                        <h2>
+                                            %%crudNameCap%%
+                                        </h2>
+                                    </div>
+                     <br>
+                     <a href="{{ url('/%%routeGroup%%%%viewName%%/create') }}" class="btn btn-success btn-sm waves-effect" title="Add New %%modelName%%" style="margin-left: 22px;">
+                        <i class="material-icons">add_circle</i> Add New
+                     </a>
+                     {!! Form::open(['method' => 'GET', 'url' => '/%%routeGroup%%%%viewName%%', 'class' => 'navbar-form navbar-right searchBar', 'role' => 'search'])  !!}
+                             <div class="input-group">
+                             <input type="text" class="form-control" name="search" placeholder="Search..." style="border: ridge">
+                             <span class="input-group-btn">
+                             <button class="" type="submit">
+                             <i class="material-icons" style="height: 27px !important;">search</i>
+                              </button>
+                              </span>
+                              </div>
+                     {!! Form::close() !!}
+                     <div class="body">
+                     <br>
+                      <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Sr.No</th>
+                                        %%formHeadingHtml%%
+                                        @can('view_%%viewName%%','edit_%%viewName%%', 'delete_%%viewName%%')
+                                        <th class="text-center">Actions</th>
+                                        @endcan
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($%%crudName%% as $key => $item)
+                                    <tr>
+                                        <td>{{ ++$key }}</td>
+                                        %%formBodyHtml%%
+                                        @can('view_%%viewName%%')
+                                        <td class="text-center">
+                                        <a href="{{ url('/%%routeGroup%%%%viewName%%/' . $item->id) }}" title="View %%modelName%%"><button class="btn btn-info btn-xs"><i class="material-icons">remove_red_eye</i> View</button></a>
+                                        @include('shared._actions', ['entity' => '%%viewName%%',
+                                        'id' => $item->id
+                                        ])
+                                         </td>
+                                        @endcan
+                                      </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                            <div class="pagination-wrapper"> {!! $%%crudName%%->appends(['search' => Request::get('search')])->render() !!} </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

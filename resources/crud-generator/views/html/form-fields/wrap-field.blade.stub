@@ -1,0 +1,7 @@
+ <label for="%1$s" style="font-size:18px;">{{ %2$s }}</label>
+ <div class="form-group">
+      <div class="form-line">
+        %3$s
+     {!! $errors->first('%1$s', '<p class="help-block">:message</p>') !!}
+      </div>
+ </div>

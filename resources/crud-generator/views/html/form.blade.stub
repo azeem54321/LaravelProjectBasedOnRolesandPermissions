@@ -1,0 +1,2 @@
+%%formFieldsHtml%%
+<button type="submit" class="btn btn-success btn-lg m-t-15 waves-effect col-md-offset-5" style="font-size: 18px;border: double"><i class="material-icons">create</i>{{ $formMode === 'edit' ? 'Update' : 'Create' }}</button>
