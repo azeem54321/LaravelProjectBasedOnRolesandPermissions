@@ -20,4 +20,8 @@ php artisan auth:permission Post
 #### Eg:
 php artisan auth:permission Post --remove
 
+### Login Credentials:
+Username: azeem@firsteconomy.com
+Password: 12345678
+
 
