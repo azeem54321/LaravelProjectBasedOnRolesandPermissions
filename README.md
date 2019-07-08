@@ -12,12 +12,12 @@ Import Databse from public folder
 #### Eg:
 php artisan crud:generate Posts --fields='title#string; description#text; status#select#options={"1": "Active", "0": "Disabled"}'  --view-path=admin --controller-namespace=Admin --route-group=admin --soft-deletes=yes --validations='title#required' --form-helper=html
 
-##Add Permission:
-###Eg:
+## Add Permission:
+### Eg:
 php artisan auth:permission Post
 
-##Remove Permission:
-###Eg:
+## Remove Permission:
+### Eg:
 php artisan auth:permission Post --remove
 
 
