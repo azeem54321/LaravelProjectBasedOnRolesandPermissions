@@ -5,3 +5,10 @@ This Project is based on ACL , Different Type of Guard ,Crud Generator and Passp
 2. `cp .env.example .env`
 3. Update the database credentials in `.env`
 4. run `php artisan key:generate`
+
+## Database
+Import Databse from public folder
+
+##Crud Generato
+#Eg:
+php artisan crud:generate Posts --fields='title#string; description#text; status#select#options={"1": "Active", "0": "Disabled"}'  --view-path=admin --controller-namespace=Admin --route-group=admin --soft-deletes=yes --validations='title#required' --form-helper=html
