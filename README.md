@@ -16,7 +16,7 @@ php artisan crud:generate Posts --fields='title#string; description#text; status
 #### Eg:
 php artisan auth:permission Post
 
-## Remove Permission:
+### Remove Permission:
 #### Eg:
 php artisan auth:permission Post --remove
 
