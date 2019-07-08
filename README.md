@@ -8,7 +8,6 @@ This Project is based on ACL , Different Type of Guard ,Crud Generator and Passp
 
 ## Database
 Import Databse from public folder
-
-##Crud Generato
-#Eg:
+## Crud Generator
+# Eg:
 php artisan crud:generate Posts --fields='title#string; description#text; status#select#options={"1": "Active", "0": "Disabled"}'  --view-path=admin --controller-namespace=Admin --route-group=admin --soft-deletes=yes --validations='title#required' --form-helper=html
